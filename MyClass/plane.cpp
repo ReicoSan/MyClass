@@ -17,6 +17,38 @@ Plane::Plane(string brand, string model, int age, double price) {
 
 Plane::~Plane() {}
 
+string Plane::getBrand() {
+	return brand;
+}
+
+void Plane::setBrand(string brand) {
+	this->brand = brand;
+}
+
+string Plane::getModel() {
+	return model;
+}
+
+void Plane::setModel(string model) {
+	this->model = model;
+}
+
+int Plane::getAge() {
+	return age;
+}
+
+void Plane::setAge(int age) {
+	this->age = age;
+}
+
+double Plane::getPrice() {
+	return price;
+}
+
+void Plane::setPrice(double price) {
+	this->price = price;
+}
+
 string Plane::getInfo() {
 	return "Plane: brand = " + brand
 		+ "; model = " + model
