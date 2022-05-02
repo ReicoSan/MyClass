@@ -3,7 +3,7 @@
 
 class Plane {
 
-private:
+protected:
 
 	string brand;
 	string model;

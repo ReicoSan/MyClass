@@ -1,4 +1,5 @@
 #include "plane.h"
+#include "passenger.h"
 
 int main()
 {
@@ -6,26 +7,36 @@ int main()
 	string model;
 	int age;
 	double price;
+	int numberSeats;
+	int numberFloors;
 
-	Plane plane1;
+	Passenger passenger1;
 
 	cout << "Input brand of plane - " << endl;
 	cin >> brand;
-	plane1.setBrand(brand);
+	passenger1.setBrand(brand);
 
 	cout << "Input age of plane - " << endl;
 	cin >> age;
-	plane1.setAge(age);
+	passenger1.setAge(age);
 
 	cout << "Input model of plane - " << endl;
 	cin >> model;
-	plane1.setModel(model);
+	passenger1.setModel(model);
 
 	cout << "Input price of plane - " << endl;
 	cin >> price;
-	plane1.setPrice(price);
+	passenger1.setPrice(price);
 
-	cout << plane1.getInfo() << endl;
+	cout << "Input number of seats - " << endl;
+	cin >> numberSeats;
+	passenger1.setNumberSeats(numberSeats);
+
+	cout << "Input number of floors - " << endl;
+	cin >> numberFloors;
+	passenger1.setNumberFloors(numberFloors);
+
+	cout << passenger1.getInfo() << endl;
 
 	system("pause");
 	return 0;
