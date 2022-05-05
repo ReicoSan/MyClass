@@ -1,5 +1,6 @@
 #include "plane.h"
 #include "passenger.h"
+#include "hangar.h"
 
 int main()
 {
@@ -7,36 +8,30 @@ int main()
 	string model;
 	int age;
 	double price;
-	int numberSeats;
-	int numberFloors;
 
-	Passenger passenger1;
+	Plane p1("bwv", "s1", 12, 1000);
+	Plane p2("bwv", "s2", 12, 1000);
+	Plane p3("bwv", "s3", 12, 1000);
+	Plane p4("bwv", "s4", 12, 1000);
+	Plane p5("bwv", "s5", 12, 1000);
+	Hangar hangar("Victory");
 
-	cout << "Input brand of plane - " << endl;
-	cin >> brand;
-	passenger1.setBrand(brand);
+	hangar.add(p1);
+	hangar.add(p2);
+	hangar.add(p3);
+	hangar.add(p4);
 
-	cout << "Input age of plane - " << endl;
-	cin >> age;
-	passenger1.setAge(age);
+	cout << "The size of hangar is - " << hangar.getSize() << endl;
 
-	cout << "Input model of plane - " << endl;
-	cin >> model;
-	passenger1.setModel(model);
+	cout << hangar.getInfo() << endl;
 
-	cout << "Input price of plane - " << endl;
-	cin >> price;
-	passenger1.setPrice(price);
+	hangar.remove(1);
 
-	cout << "Input number of seats - " << endl;
-	cin >> numberSeats;
-	passenger1.setNumberSeats(numberSeats);
+	cout << hangar.getInfo() << endl;
 
-	cout << "Input number of floors - " << endl;
-	cin >> numberFloors;
-	passenger1.setNumberFloors(numberFloors);
+	hangar.set(0, p5);
 
-	cout << passenger1.getInfo() << endl;
+	cout << hangar.getInfo() << endl;
 
 	system("pause");
 	return 0;
