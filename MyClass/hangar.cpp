@@ -47,20 +47,26 @@ void Hangar::add(Plane plane) {
 
 void Hangar::remove(int index) {
 
-	Plane* temp = new Plane[size - 1];
-
-	Plane t = list[index];
-	list[index] = list[size - 1];
-	list[size - 1] = t;
-
-	size--;
-
-	for (int i = 0; i < size; i++) {
-		temp[i] = list[i];
+	if (list == NULL || index < 0 || index >= size) {
+		cout << "Wrong index";
 	}
+	else {
 
-	delete[] list;
-	list = temp;
+		Plane* temp = new Plane[size - 1];
+
+		Plane t = list[index];
+		list[index] = list[size - 1];
+		list[size - 1] = t;
+
+		size--;
+
+		for (int i = 0; i < size; i++) {
+			temp[i] = list[i];
+		}
+
+		delete[] list;
+		list = temp; 
+	}
 }
 
 Plane Hangar::get(int index) {
@@ -73,8 +79,12 @@ Plane Hangar::get(int index) {
 }
 
 void Hangar::set(int indexD, Plane newP) {
-	remove(indexD);
-	add(newP);
+	if (list == NULL || indexD < 0 || indexD >= size) {
+		cout << "Wrong index";
+	}
+	else {
+		list[indexD] = newP;
+	}
 }
 
 int Hangar::getSize() {
