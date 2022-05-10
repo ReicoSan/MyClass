@@ -9,6 +9,7 @@ protected:
 	string model;
 	int age;
 	double price;
+	static int count;
 
 public:
 
@@ -27,6 +28,8 @@ public:
 
 	double getPrice();
 	void setPrice(double price);
+
+	static int getCount();
 
 	virtual string getInfo();
 };

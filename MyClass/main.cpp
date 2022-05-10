@@ -14,7 +14,7 @@ int main()
 	Plane p3("bwv", "s3", 12, 1000);
 	Plane p4("bwv", "s4", 12, 1000);
 	Plane p5("bwv", "s5", 12, 1000);
-	Hangar hangar("Victory");
+	/*Hangar hangar("Victory");
 
 	hangar.add(p1);
 	hangar.add(p2);
@@ -31,7 +31,9 @@ int main()
 
 	hangar.set(0, p5);
 
-	cout << hangar.getInfo() << endl;
+	cout << hangar.getInfo() << endl;*/
+
+	cout << "Count of all planes - " << p1.getCount() << endl;
 
 	system("pause");
 	return 0;

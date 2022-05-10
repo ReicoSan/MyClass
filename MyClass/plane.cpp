@@ -1,10 +1,13 @@
 #include "plane.h"
 
+int Plane::count = 0;
+
 Plane::Plane() {
 	brand = "no brand";
 	model = "no model";
 	age = 0;
 	price = 0;
+	count++;
 }
 
 
@@ -13,9 +16,12 @@ Plane::Plane(string brand, string model, int age, double price) {
 	this->model = model;
 	this->age = age;
 	this->price = price;
+	count++;
 }
 
-Plane::~Plane() {}
+Plane::~Plane() {
+	count--;
+}
 
 string Plane::getBrand() {
 	return brand;
@@ -47,6 +53,10 @@ double Plane::getPrice() {
 
 void Plane::setPrice(double price) {
 	this->price = price;
+}
+
+int Plane::getCount() {
+	return count;
 }
 
 string Plane::getInfo() {
