@@ -12,7 +12,7 @@ Hangar::Hangar(string name) {
 	size = 0;
 }
 
-Hangar::Hangar(string name, Plane* list, int size) {
+Hangar::Hangar(string name, Plane** list, int size) {
 	this->name = name;
 	this->list = list;
 	this->size = size;
@@ -24,15 +24,15 @@ Hangar::~Hangar() {
 	}
 }
 
-void Hangar::add(Plane plane) {
+void Hangar::add(Plane* plane) {
 	if (list == NULL) {
-		list = new Plane[1];
+		list = new Plane*[1];
 		list[0] = plane;
 		size = 1;
 	}
 	else {
 
-		Plane* temp = new Plane[size + 1];
+		Plane** temp = new Plane*[size + 1];
 
 		for (int i = 0; i < size; i++)
 		{
@@ -52,9 +52,9 @@ void Hangar::remove(int index) {
 	}
 	else {
 
-		Plane* temp = new Plane[size - 1];
+		Plane** temp = new Plane*[size - 1];
 
-		Plane t = list[index];
+		Plane* t = list[index];
 		list[index] = list[size - 1];
 		list[size - 1] = t;
 
@@ -74,11 +74,11 @@ Plane Hangar::get(int index) {
 		return Plane("","", 0, 0);
 	}
 	else {
-		return list[index];
+		return *list[index];
 	}
 }
 
-void Hangar::set(int indexD, Plane newP) {
+void Hangar::set(int indexD, Plane* newP) {
 	if (list == NULL || indexD < 0 || indexD >= size) {
 		cout << "Wrong index";
 	}
@@ -107,7 +107,7 @@ string Hangar::getInfo() {
 	string msg = "Planes of hangar " + name + ":\n";
 
 	for (int i = 0; i < size; i++) {
-		msg += list[i].getInfo() + "\n";
+		msg += list[i] -> getInfo() + "\n";
 	}
 
 	return msg;
