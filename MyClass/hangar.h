@@ -1,8 +1,11 @@
 #pragma once
 #include "plane.h"
+#include "manager.h"
 
 class Hangar{
 
+	friend Manager;
+	
 private:
 	string name;
 	int size;

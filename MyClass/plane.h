@@ -34,8 +34,4 @@ public:
 	static int getCount();
 
 	virtual string getInfo();
-	
-	bool operator == (Plane* p1);
-	bool operator != (Plane* p1);
-
 };

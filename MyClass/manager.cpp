@@ -12,10 +12,11 @@ Manager::~Manager() {
 	hangar.~Hangar();
 }
 
-int calculateTotalPriceOfPlanesInHangar() {
+int Manager::calculateTotalPriceOfPlanesInHangar() {
 	int totalPrice = 0;
 	for (int i = 0; i < hangar.getCount(); i++) {
-		totalPrice += hangar.list[i]->getPrice();
+		Plane p1 = hangar.get(i);
+		totalPrice += p1.getPrice();
 	}
 	return totalPrice;
 	

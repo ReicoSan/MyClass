@@ -65,19 +65,3 @@ string Plane::getInfo() {
 		+ "; age = " + to_string(age)
 		+ "; price = " + to_string(price);
 }
-
-bool Plane::operator == (Plane* p1) {
-	bool result = brand == p1->brand
-		&& model == p1->model
-		&& age == p1->age
-		&& price == p1->price;
-	return result;
-}
-
-bool Plane::operator != (Plane* p1) {
-	bool result = brand != p1->brand
-		&& model != p1->model
-		&& age != p1->age
-		&& price != p1->price;
-	return result;
-}
