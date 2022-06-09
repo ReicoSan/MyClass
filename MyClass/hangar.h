@@ -7,6 +7,7 @@ private:
 	string name;
 	int size;
 	Plane** list;
+	static int count;
 
 public:
 	Hangar();
@@ -21,6 +22,7 @@ public:
 	int getSize();
 	string getName();
 	void setName(string name);
+	static int getCount();
 	string getInfo();
 };
 

@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="hangar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="manager.cpp" />
     <ClCompile Include="passenger.cpp" />
     <ClCompile Include="plane.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hangar.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="manager.h" />
     <ClInclude Include="passenger.h" />
     <ClInclude Include="plane.h" />
   </ItemGroup>

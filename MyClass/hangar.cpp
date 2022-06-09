@@ -1,27 +1,33 @@
 #include "hangar.h"
 
+int Hangar::count = 0;
+
 Hangar::Hangar() {
 	name = "name";
 	size = 0;
 	list = NULL;
+	count++;
 }
 
 Hangar::Hangar(string name) {
 	this->name = name;
 	list = NULL;
 	size = 0;
+	count++;
 }
 
 Hangar::Hangar(string name, Plane** list, int size) {
 	this->name = name;
 	this->list = list;
 	this->size = size;
+	count++;
 }
 
 Hangar::~Hangar() {
 	if (list != NULL) {
 		delete[] list;
 	}
+	count--;
 }
 
 void Hangar::add(Plane* plane) {
@@ -97,6 +103,10 @@ string Hangar::getName() {
 
 void Hangar::setName(string name) {
 	this->name = name;
+}
+
+int Hangar::getCount() {
+	return count;
 }
 
 string Hangar::getInfo() {

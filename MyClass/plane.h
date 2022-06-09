@@ -3,13 +3,15 @@
 
 class Plane {
 
+private:
+	static int count;
+	
 protected:
 
 	string brand;
 	string model;
 	int age;
 	double price;
-	static int count;
 
 public:
 
@@ -32,4 +34,8 @@ public:
 	static int getCount();
 
 	virtual string getInfo();
+	
+	bool operator == (Plane* p1);
+	bool operator != (Plane* p1);
+
 };
